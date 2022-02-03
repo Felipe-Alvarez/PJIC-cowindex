@@ -1,0 +1,12 @@
+#label_loading, #label_spin{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2em;
+    height: 50%;
+    text-shadow: black;
+}
+
+
+#Spinner{
+    width: 2em;
+    height: 2em;
+}
