@@ -25,8 +25,8 @@ const Navbar = () => {
       }
     }).catch ((error) => {
       Swal.fire({
-        title: 'Fail',
-        text: "CAgaste",
+        title: 'Error',
+        text: "Hubo un error",
         icon: 'warning'
       })
       console.log(error);
@@ -49,7 +49,7 @@ const Navbar = () => {
             <FaStickerMule></FaStickerMule>
             <div className="">Ganado</div>
           </Link>
-          <buttom id="btn" className="btn btn-primary" type="buttom" htmlFor="" onClick={ModalExit}>
+          <buttom id="btn" className="btn btn-primary" type="buttom" onClick={ModalExit}>
               <FaSignOutAlt></FaSignOutAlt>
               <div className="">Salir</div>
           </buttom> 
