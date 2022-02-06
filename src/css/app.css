@@ -27,15 +27,6 @@
   border-color: red;
 }
 
-/* .label {
-  font-size: medium;
-  opacity: 1;
-  color: gray;
-  transform: translateY(2em);
-  transform-origin: 0 0;
-  transition: all 0.3s;
-}  */
-
 #inputForm:focus + .label,
 #inputForm:not(:placeholder-shown) + .label{
   transform: translateY(-2.6em) scale(.8);
