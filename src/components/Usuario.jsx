@@ -23,7 +23,6 @@ const Perfil = () => {
                 className="form-control"
                 id="inputForm"
                 aria-describedby="docHelp"
-                value="o."
                 value="Document@user"
                 disabled
               />
@@ -35,7 +34,7 @@ const Perfil = () => {
                 className="form-control"
                 id="inputForm"
                 aria-describedby="nameHelp"
-                value="Data-type@user"
+                value="Name@user"
               />
             </div>
             {/* form password */}
@@ -47,7 +46,7 @@ const Perfil = () => {
                 type="text"
                 className="form-control"
                 id="inputForm"
-                value="Data-type@user"
+                value="Lastname@user"
               />
             </div>
             <div className="form-group mb-2 mt-4">
@@ -58,7 +57,7 @@ const Perfil = () => {
                 type="text"
                 className="form-control"
                 id="inputForm"
-                value="Data-type@user"
+                value="Lastname2@user"
               />
             </div>
             <div className="form-group mb-2 mt-4">
@@ -69,7 +68,7 @@ const Perfil = () => {
                 type="email"
                 className="form-control"
                 id="inputForm"
-                value="Data-type@user"
+                value="Email@user"
               />
             </div>
             <div className="form-group mb-2 mt-4">
@@ -80,7 +79,7 @@ const Perfil = () => {
                 type="password"
                 className="form-control"
                 id="inputForm"
-                value="Data-type@user"
+                value="Password@user"
               />
             </div>
           </form>
