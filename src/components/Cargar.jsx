@@ -18,7 +18,7 @@ const Cargar = () => {
           className="row-fluid col-12 justify-content-center d-flex"
           id="label_loading"
         >
-          <span className="row-fluid text-success">© CowIndex</span>
+          <span className="row-fluid text-success">© Cowindex | 2021</span>
         </div>
       </div>
     </>

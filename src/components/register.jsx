@@ -6,7 +6,7 @@ import { BsFillPersonCheckFill } from "react-icons/bs";
 const register = () => {
   return (
     <div
-      className="container-fluid vh-100 d-flex align-items-center"
+      className="container-fluid d-flex align-items-center vh-100"
       id="contain"
     >
       {/* PARA ORGANIZAR: JUSTIFY = EJE X, ALING = EJE Y */}
@@ -21,6 +21,16 @@ const register = () => {
         </div>
         <hr className="w-75 m-auto mt-2" />
         {/* form email */}
+        <div className="form-group mb-2 mt-4">
+          <label id="form-label">Documento</label>
+          <input
+            type="number"
+            className="form-control"
+            id="inputForm"
+            aria-describedby="docHelp"
+            placeholder="Ingrese su documento."
+          />
+        </div>
         <div className="form-group mb-2 mt-4">
           <label id="form-label">Nombre</label>
           <input

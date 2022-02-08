@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/app.css";
 import { Link } from "react-router-dom";
 import { GrKey } from "react-icons/gr";
+import LogoCow from "../images/cowindex.png";
 // import { useState } from "react";
 //import Cargar from "./Cargar";
 
@@ -14,10 +15,14 @@ const App = () => {
       id="container"
     >
       {/* PARA ORGANIZAR: JUSTIFY = EJE X, ALING = EJE Y */}
-      <form
-        className="ms-5 col-lg-4 col-md-10 col-sm-10 col-10 h-auto p-2"
-        id="form"
-      >
+      <form className="ms-5 col-lg-4 col-md-10 col-sm-10 col-12 p-2" id="form">
+        <div className="d-flex justify-content-center">
+          <img
+            src={LogoCow}
+            className="img img-fluid"
+            alt="cowindex-logo.png"
+          />
+        </div>
         <div className="text-center">
           <h1 className="text-center mt-4" id="Texto_registro">
             Iniciar sesión
@@ -49,11 +54,12 @@ const App = () => {
         </div>
         <div className="w-100 d-flex justify-content-center mt-4">
           <Link
-            className="btn btn-success col-8 d-flex justify-content-between"
-            to="/crear-lote"
+            className="btn btn-success d-flex col-12 justify-content-between"
+            to="/lotes"
+            id="link-login"
           >
-            <div className="col-6">Iniciar sesión</div>
-            <div className="col-2">
+            <div className="">Iniciar sesión</div>
+            <div className="">
               <GrKey></GrKey>
             </div>
           </Link>

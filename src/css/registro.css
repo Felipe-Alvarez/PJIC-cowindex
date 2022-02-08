@@ -1,3 +1,7 @@
-#contain{
-    background-color: red;
+#contain {
+  background-image: url("../images/background-cow.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: auto;
 }

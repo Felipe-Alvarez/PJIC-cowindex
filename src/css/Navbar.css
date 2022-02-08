@@ -17,3 +17,11 @@
     font-size: 2.5em;
     color: white;
 }
+
+@media(max-width: 575px){
+    #btn{
+        width: auto;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

@@ -4,6 +4,7 @@ import Registro from "../components/register";
 import Lotes from "../components/Lotes";
 import Mislotes from "../components/Mislotes";
 import Ganado from "../components/Ganado";
+import Perfil from '../components/Usuario';
 
 const Rutas = () => {
   return (
@@ -14,6 +15,7 @@ const Rutas = () => {
         <Route path="/registro" element={<Registro />}></Route>
         <Route path="/lotes" element={<Lotes />}></Route>
         <Route path="/ganado" element={<Ganado></Ganado>}></Route>
+        <Route path="/usuario" element={<Perfil></Perfil>}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -1,12 +1,11 @@
-import Nav from './Navbar'
+import Nav from './Navbar';
+import Cargar from './Cargar';
 
 const Ganado = () => {
     return(
         <>
         <Nav />
-        <div className="container-fluid">
-
-        </div>
+        <Cargar />
         </>
     );
 }
