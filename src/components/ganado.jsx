@@ -1,7 +1,7 @@
 import Nav from './Navbar';
 import Cargar from './Cargar';
 
-const Ganado = () => {
+const ganado = () => {
     return(
         <>
         <Nav />
@@ -10,4 +10,4 @@ const Ganado = () => {
     );
 }
 
-export default Ganado;
+export default ganado;
