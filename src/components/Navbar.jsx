@@ -1,13 +1,11 @@
 import "../css/Navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaThLarge } from "react-icons/fa";
-import { FaSignOutAlt } from "react-icons/fa";
-import { FaUserAlt } from "react-icons/fa";
-import { FaStickerMule } from "react-icons/fa";
+import { FaThLarge, FaSignOutAlt, FaUserAlt, FaStickerMule } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
+
   const ModalExit = () => {
     Swal.fire({
       title: "Cerrar sesión",
@@ -21,13 +19,13 @@ const Navbar = () => {
     })
       .then((res) => {
         if (res.isConfirmed === true) {
-          window.location.href = `/`;
+          window.location.href="/"
         }
       })
       .catch((error) => {
         Swal.fire({
           title: "Error",
-          text: "Hubo un error",
+          text: `Hubo un error: ${error}`,
           icon: "warning",
         });
         console.log(error);

@@ -1,18 +1,5 @@
-#enunciado{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 2em;
-}
-#form{
-    border-radius: 1em;
-    box-shadow: inset;
-}
 #btn, #btn:focus{
     background: none;
-    border: none;
-    box-shadow: none;
-}
-#code, #code:focus{
     border: none;
     box-shadow: none;
 }

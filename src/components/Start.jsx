@@ -1,6 +1,5 @@
 import "../css/Start.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./Navbar";
 import { useFormulario } from "../Hooks/useFormulario";
 // ES6 Modules or TypeScript
 import Swal from "sweetalert2";
@@ -62,91 +61,85 @@ const Start = ({ agregarLotes }) => {
   };
 
   return (
-    <div className="container-fluid vh-100 bg-light p-0">
-      <Navbar title="Agregar lote"/>
-      <br />
-      <div className="container">
-        <form className="p-2 mb-5" id="form" onSubmit={handleSubmit}>
-          {/* form LOTE */}
-          <div className="form-group mb-2 mt-4">
-            <label id="form-label">Nombre del lote</label>
+      <form className="p-2 mb-5" id="form" onSubmit={handleSubmit}>
+        {/* form LOTE */}
+        <div className="form-group mb-2 mt-4">
+          <label id="form-label">Nombre del lote</label>
+          <input
+            type="text"
+            className="form-control"
+            id="inputForm"
+            placeholder="Ingrese el nombre del lote"
+            name="nombre"
+            value={nombre}
+            onChange={handleChange}
+          />
+        </div>
+        {/* form NRO VACAS */}
+        <div className="form-group mb-2 mt-4">
+          <label htmlfor="name" id="form-label">
+            Cantidad de animales
+          </label>
+          <input
+            type="number"
+            className="form-control"
+            id="inputForm"
+            placeholder="Ingrese el número máximo de animales"
+            name="animal"
+            value={animal}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group mb-2 mt-4">
+          <label htmlfor="name" id="form-label">
+            Tipo de lote
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="inputForm"
+            placeholder="Añada para qué está destinado el lote"
+            name="tipolote"
+            value={tipolote}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group mb-2 mt-4">
+          <label htmlfor="name" id="form-label">
+            Fecha de creación
+          </label>
+          <input
+            type="date"
+            className="form-control"
+            id="inputForm"
+            placeholder="Añada para qué está destinado el lote"
+            name="fecha"
+            value={fecha}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group mt-4">
+          <div class="form-check form-switch">
             <input
-              type="text"
-              className="form-control"
-              id="inputForm"
-              placeholder="Ingrese el nombre del lote"
-              name="nombre"
-              value={nombre}
+              class="form-check-input"
+              type="checkbox"
+              id="check"
+              name="prioridad"
+              checked={prioridad}
               onChange={handleChange}
             />
-          </div>
-          {/* form NRO VACAS */}
-          <div className="form-group mb-2 mt-4">
-            <label htmlfor="name" id="form-label">
-              Cantidad de animales
+            <label class="form-check-label" htmlfor="flexSwitchCheckDefault">
+              Priorizar lote
             </label>
-            <input
-              type="number"
-              className="form-control"
-              id="inputForm"
-              placeholder="Ingrese el número máximo de animales"
-              name="animal"
-              value={animal}
-              onChange={handleChange}
-            />
           </div>
-          <div className="form-group mb-2 mt-4">
-            <label htmlfor="name" id="form-label">
-              Tipo de lote
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="inputForm"
-              placeholder="Añada para qué está destinado el lote"
-              name="descripcion"
-              value={tipolote}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group mb-2 mt-4">
-            <label htmlfor="name" id="form-label">
-              Fecha de creación
-            </label>
-            <input
-              type="date"
-              className="form-control"
-              id="inputForm"
-              placeholder="Añada para qué está destinado el lote"
-              name="fecha"
-              value={fecha}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group mt-4">
-            <div class="form-check form-switch">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="check"
-                name="prioridad"
-                checked={prioridad}
-                onChange={handleChange}
-              />
-              <label class="form-check-label" htmlfor="flexSwitchCheckDefault">
-                Priorizar lote
-              </label>
-            </div>
-          </div>
+        </div>
 
-          <div className="w-100 d-flex justify-content-center mt-4">
-            <button type="submit" className="btn btn-success col-10">
-              Agregar lote
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
+        <div className="w-100 d-flex justify-content-center mt-4">
+          <button type="submit" className="btn btn-success col-10">
+            Agregar lote
+          </button>
+        </div>
+      </form>
   );
 };
 

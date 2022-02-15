@@ -3,11 +3,14 @@ import "../css/app.css";
 import { Link } from "react-router-dom";
 import { GrKey } from "react-icons/gr";
 import LogoCow from "../images/cowindex.png";
+
 // import { useState } from "react";
 //import Cargar from "./Cargar";
 
+
+
+
 const App = () => {
-  // const [loading, setLoading] = useState(false);
 
   return (
     <div
