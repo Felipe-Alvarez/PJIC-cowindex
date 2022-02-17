@@ -18,17 +18,17 @@
   border: 1px solid #198754;
   color: #198754;
 }
-#buttom-wel:hover {
-  background-color: #ffffff !important;
-  transition: all 1s;
-}
 #buttom-wel:focus {
   box-shadow: none;
 }
 
 #info {
   font-family: "Exo", sans-serif;
-  background-color: rgba(4, 110, 0, 0.384);
+  background-color: white;
+}
+.info {
+  z-index: 3;
+  position: relative;
 }
 
 #footer {
@@ -38,12 +38,10 @@
 .context {
   width: 100%;
   position: absolute;
-  top: 50vh;
 }
 
 .context h1 {
   text-align: center;
-  color: #fff;
   font-size: 50px;
 }
 
@@ -62,7 +60,7 @@
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.425);
+  background: rgba(25, 135, 84, 0.432);
   animation: animate 25s linear infinite;
   bottom: -150px;
 }
