@@ -12,7 +12,7 @@ const Perfil = () => {
       const res = await fetch(
         "https://API-COW.felipealvarez8.repl.co/api/usuario"
       );
-      // console.log(res);
+      console.log(res);
       // const datos = await res.json();
       // setUser(datos);
       // console.log(datos);
