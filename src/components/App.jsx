@@ -4,17 +4,12 @@ import { Link } from "react-router-dom";
 import { GrKey } from "react-icons/gr";
 import LogoCow from "../images/cowindex.png";
 // import { useHistory } from "react-router-dom";
-import Axios from 'axios';
+// import Axios from "axios";
 
 // import { useState } from "react";
 //import Cargar from "./Cargar";
 
-
-
-
 const App = () => {
-
-  
   // const url = 'https://api-cow.felipealvarez8.repl.co/api/usuario'
 
   // const handleSubmit = (e) =>{
@@ -22,7 +17,7 @@ const App = () => {
   // }
 
   // const handleChange = async (e) => {
-      
+
   // }
   // const [user, setuser] = useState(null);
   // async function login(email, pass){
@@ -34,26 +29,26 @@ const App = () => {
 
   // const history = useHistory();
 
-  function login() {
-    const usuario = {
-      correo: document.getElementById("inputForm").value,
-      clave: document.getElementById("inputFormPass").value,
-    }; 
-    Axios
-      .post("https://API-COW.felipealvarez8.repl.co/api/usuario/auth", usuario)
-      .then(function ({ data, status }) {
-        // Se ejecuta siempre que el servidor ejecute todo correctamente
-        if (status === 200) {
-          // history.push("/");
-        } else {
-            
-        }
-      })
-      .catch(function (error) {
-        // Se ejecuta siempre que ocurra algún error
-        console.log(error);
-      });
-  }
+  // function login() {
+  //   const usuario = {
+  //     correo: document.getElementById("inputForm").value,
+  //     clave: document.getElementById("inputFormPass").value,
+  //   };
+  //   Axios
+  //     .post("https://API-COW.felipealvarez8.repl.co/api/usuario/auth", usuario)
+  //     .then(function ({ data, status }) {
+  //       // Se ejecuta siempre que el servidor ejecute todo correctamente
+  //       if (status === 200) {
+  //         // history.push("/");
+  //       } else {
+
+  //       }
+  //     })
+  //     .catch(function (error) {
+  //       // Se ejecuta siempre que ocurra algún error
+  //       console.log(error);
+  //     });
+  // }
 
   return (
     <div
