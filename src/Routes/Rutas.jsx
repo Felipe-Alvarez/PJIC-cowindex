@@ -3,7 +3,7 @@ import App from "../components/App";
 import Registro from "../components/register";
 import Start from "../components/Start";
 import Mislotes from "../components/Mislotes";
-import Ganado from "../components/Ganado";
+import Ganado from "../components/ganado";
 import Perfil from "../components/Usuario";
 import Bruchure from '../components/Bruchure';
 
