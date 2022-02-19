@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import Cargar from "./Cargar";
 import { v4 as uuidv4 } from "uuid";
 
-const Mislotes = (props) => {
+const Mislotes = () => {
   // const [lotes, setLotes] = useState([]);
 
   // useEffect(() => {
@@ -68,12 +68,12 @@ const Mislotes = (props) => {
   }
     return (
       <>
-        <Navbar />
+      <Navbar />
         <div className="container">
           <div className="row-fluid mt-4 justify-content-center d-flex">
             <div
               id="btn-crelote"
-              className="btn btn-success col-4"
+              className="btn btn-success collg-4 col-12"
               data-bs-toggle="modal"
               data-bs-target="#modal-crear"
             >
@@ -94,15 +94,15 @@ const Mislotes = (props) => {
                     </div>
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item d-flex justify-content-beetwen">
-                        <p>Cantidad de animales: </p>
+                        <p className="me-2">Cantidad de animales: </p>
                         <p>{item.CANTIDAD_GANADO_LOTE}</p>
                       </li>
                       <li className="list-group-item d-flex justify-content-beetwen">
-                        <p>tipo del lote: </p>
+                        <p className="me-2">tipo del lote: </p>
                         <p>{item.TIPO_LOTE}</p>
                       </li>
                       <li className="list-group-item d-flex justify-content-beetwen">
-                        <p>Fecha de creación: </p>
+                        <p className="me-2">Fecha de creación: </p>
                         <p>{item.FECHA_LOTE}</p>
                       </li>
                       {/* <li className="list-group-item">
