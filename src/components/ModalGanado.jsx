@@ -7,8 +7,10 @@ import Swal from "sweetalert2";
 import { v4 as uuidv4 } from "uuid";
 import { Button } from "react-bootstrap";
 import Axios from "axios";
+// import { useHistory } from "react-router-dom";
 
 const ModalGanado = () => {
+  // let history = useHistory();
   const [idLote, setIdLote] = useState([]);
   const pintarID = async () => {
     try {
@@ -79,7 +81,7 @@ const ModalGanado = () => {
                 confirmButtonText: "Aceptar",
               }).then((res) => {
                 if (res.isConfirmed === true) {
-                  window.location.href = "/ganado";
+                  window.location.reload(true)
                 }
               });
             })
@@ -131,6 +133,7 @@ const ModalGanado = () => {
                       id="inputForm"
                       placeholder="Ingrese el nombre del animal"
                       name="NOMBRE_GANADO"
+                      required
                     />
                   </div>
                   {/* form NRO VACAS */}
@@ -157,6 +160,7 @@ const ModalGanado = () => {
                       id="inputForm"
                       placeholder="Añada para qué está destinado el animal"
                       name="TIPO_GANADO"
+                      required
                     />
                   </div>
                   <div className="form-group mb-2 mt-4">

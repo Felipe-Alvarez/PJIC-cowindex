@@ -73,7 +73,7 @@ const Mislotes = () => {
           <div className="row-fluid mt-4 justify-content-center d-flex">
             <div
               id="btn-crelote"
-              className="btn btn-success collg-4 col-12"
+              className="btn btn-success col-lg-4 col-12"
               data-bs-toggle="modal"
               data-bs-target="#modal-crear"
             >

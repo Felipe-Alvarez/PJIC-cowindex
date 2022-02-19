@@ -7,8 +7,8 @@ import { useState, useEffect } from "react";
 import Cargar from "./Cargar";
 import { v4 as uuidv4 } from "uuid";
 
-
 const Ganado = () => {
+
   const [ganadoPintado, setGanadoPintado] = useState([]);
   const [loading, setLoading] = useState(false);
   const pintarGanado = async () => {
@@ -54,52 +54,52 @@ const Ganado = () => {
       <ModalGanado />
       <br />
       <div className="container">
-          <div className="row row-cols-1 row-cols-md-2 g-4">
-            {ganadoPintado.map((item) => {
-              return (
-                <div className="col" key={uuidv4()}>
-                  <div className="card mb-4">
-                    <div className="card-body bg-success text-light">
-                      <h5 className="card-title">{item.NOMBRE_GANADO}</h5>
-                    </div>
-                    <ul className="list-group list-group-flush">
-                      <li className="list-group-item d-flex justify-content-beetwen">
-                        <p className="me-2">Raza del ganado: </p>
-                        <p>{item.RAZA_GANADO}</p>
-                      </li>
-                      <li className="list-group-item d-flex justify-content-beetwen">
-                        <p className="me-2">tipo del ganado: </p>
-                        <p>{item.TIPO_GANADO}</p>
-                      </li>
-                      <li className="list-group-item d-flex justify-content-beetwen">
-                        <p className="me-2">Pertenece al lote: </p>
-                        <p>{item.ID_LOTE}</p>
-                      </li>
-                    </ul>
-                    <div className="card-body d-flex justify-content-end w-100">
-                      <button
-                        className="btn btn-danger me-3"
-                        onClick={() => {
-                          // eliminarLotes(id);
-                        }}
-                      >
-                        Eliminar ganado
-                      </button>
-                      <button
-                        className="btn btn-warning"
-                        onClick={() => {
-                          // editarLotes(id);
-                        }}
-                      >
-                        Editar ganado
-                      </button>
-                    </div>
+        <div className="row row-cols-1 row-cols-md-2 g-4">
+          {ganadoPintado.map((item) => {
+            return (
+              <div className="col" key={uuidv4()}>
+                <div className="card mb-4">
+                  <div className="card-body bg-success text-light">
+                    <h5 className="card-title">{item.NOMBRE_GANADO}</h5>
+                  </div>
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item d-flex justify-content-beetwen">
+                      <p className="me-2">Raza del ganado: </p>
+                      <p>{item.RAZA_GANADO}</p>
+                    </li>
+                    <li className="list-group-item d-flex justify-content-beetwen">
+                      <p className="me-2">tipo del ganado: </p>
+                      <p>{item.TIPO_GANADO}</p>
+                    </li>
+                    <li className="list-group-item d-flex justify-content-beetwen">
+                      <p className="me-2">Pertenece al lote: </p>
+                      <p>{item.ID_LOTE}</p>
+                    </li>
+                  </ul>
+                  <div className="card-body d-flex justify-content-end w-100">
+                    <button
+                      className="btn btn-danger me-3"
+                      onClick={() => {
+                        // eliminarLotes(id);
+                      }}
+                    >
+                      Eliminar ganado
+                    </button>
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        // editarLotes(id);
+                      }}
+                    >
+                      Editar ganado
+                    </button>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
+      </div>
     </>
   );
 };

@@ -87,7 +87,7 @@ const Start = () => {
               confirmButtonText: "Aceptar",
             }).then((res) => {
               if (res.isConfirmed === true) {
-                window.location.href = "/lotes";
+                window.location.reload(true)
               }
             });
           })
@@ -114,6 +114,7 @@ const Start = () => {
             id="inputForm"
             placeholder="Ingrese el número de animales"
             name="CANTIDAD_GANADO_LOTE"
+            required
           />
         </div>
         <div className="form-group mb-2 mt-4">
@@ -126,6 +127,7 @@ const Start = () => {
             id="inputForm"
             placeholder="Ingrese el tipo de lote (Carne, crianza, etc)"
             name="TIPO_LOTE"
+            required
           />
         </div>
         <div className="form-group mb-2 mt-4">
@@ -138,6 +140,7 @@ const Start = () => {
             id="inputForm"
             placeholder="Fecha de creación"
             name="FECHA_LOTE"
+            required
           />
         </div>
         <div className="w-100 d-flex justify-content-center mt-4">

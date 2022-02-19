@@ -9,7 +9,6 @@ import Swal from "sweetalert2";
 // import { v4 as uuidv4 } from "uuid";
 
 const register = () => {
-
   return (
     <Formik
       initialValues={{
@@ -39,7 +38,11 @@ const register = () => {
               text: "Se ha registrado correctamente",
               icon: "success",
               confirmButtonText: "Aceptar",
-            })
+            }).then((res) => {
+              if (res.isConfirmed === true) {
+                window.location.reload(true);
+              }
+            });
           })
           .catch(function (error) {
             console.log(error);

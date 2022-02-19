@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
+
   const ModalExit = () => {
     Swal.fire({
       title: "Cerrar sesión",
