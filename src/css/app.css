@@ -28,29 +28,28 @@
   background: rgb(255, 255, 255);
 }
 
-#inputForm {
+#inputForm, #inputFormPass {
   transition: all 0.3s;
   box-shadow: none;
   border: none;
   border-bottom: 1px solid;
   border-radius: 0px !important;
 }
-#inputForm:focus {
+#inputForm:focus, #inputFormPass:focus {
   box-shadow: none;
 }
-#inputForm:valid:focus {
+#inputForm:valid:focus, #inputFormPass:valid:focus {
   border-color: green;
 }
-#inputForm:invalid:focus {
+#inputForm:invalid:focus, #inputFormPass:invalid:focus {
   border-color: red;
 }
 
-#inputForm:focus + .label,
-#inputForm:not(:placeholder-shown) + .label{
+#inputForm:focus, #inputFormPass:focus + .label,
+#inputForm:not(:placeholder-shown) + #inputFormPass:not(:placeholder-shown) + .label{
   transform: translateY(-2.6em) scale(.8);
-  color: rgb(0, 106, 255);
 }
 
-#inputForm:focus-within {
+#inputForm:focus-within, #inputFormPass:focus-within{
   transform: scale(1.01, 1.01);
 }

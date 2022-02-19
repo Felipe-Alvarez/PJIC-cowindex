@@ -14,10 +14,6 @@
   border-bottom: none !important;
 }
 
-#close-buttom {
-  color: whitesmoke;
-}
-
 #close-buttom:hover {
   transform: rotate(360deg);
   transition: all 1s;

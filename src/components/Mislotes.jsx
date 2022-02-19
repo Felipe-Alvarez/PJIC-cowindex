@@ -1,118 +1,142 @@
+import React from "react";
 import "../css/lotes.css";
-import { useState } from "react";
-import Start from "./Start";
-import ComponentLotes from "./componentLotes";
 import Navbar from "./Navbar";
-import { useEffect } from "react";
+import Modal from "./Modal";
+// import ComponentLotes from "./componentLotes";
+import { useState, useEffect } from "react";
+import Cargar from "./Cargar";
+import { v4 as uuidv4 } from "uuid";
 
+const Mislotes = (props) => {
+  // const [lotes, setLotes] = useState([]);
 
-const Mislotes = () => {
-  const [lotes, setLotes] = useState([]);
+  // useEffect(() => {
+  //   if (window.localStorage.getItem("lotes")) {
+  //     setLotes(JSON.parse(window.localStorage.getItem("lotes")));
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   window.localStorage.setItem("lotes", JSON.stringify(lotes));
+  // }, [lotes]);
+
+  // const agregarLotes = (lote) => {
+  //   setLotes((old) => [...old, lote]);
+  // };
+
+  // const eliminarLotes = (id) => {
+  //   setLotes((old) => old.filter((item) => item.id !== id));
+  // };
+
+  // const editarLotes = (id) => {
+  //   const editarLotes = lotes.map((item) =>
+  //     item.id === id ? { ...item, prioridad: !item.prioridad } : item
+  //   );
+
+  //   setLotes(editarLotes);
+  // };
+  // if(!loadLotes){
+  //   return(
+  //     <Cargar />
+  //   );
+  // }
+  const [lotePintado, setLotePintado] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const pintarLotes = async () => {
+    try {
+      setLoading(true)
+      const res = await fetch(
+        "https://API-COW.felipealvarez8.repl.co/api/lotes"
+      );
+      // console.log(res);
+      const datos = await res.json();
+      setLotePintado(datos);
+      console.log(datos);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    if (window.localStorage.getItem("lotes")) {
-      setLotes(JSON.parse(window.localStorage.getItem("lotes")));
-    }
+    pintarLotes();
   }, []);
 
-  useEffect(() => {
-    window.localStorage.setItem("lotes", JSON.stringify(lotes));
-    console.log(lotes);
-  }, [lotes]);
-
-  const agregarLotes = (lote) => {
-    console.log(lote);
-    setLotes((old) => [...old, lote]);
-  };
-
-  const eliminarLotes = (id) => {
-    setLotes((old) => old.filter((item) => item.id !== id));
-  };
-
-  const editarLotes = (id) => {
-    const editarLotes = lotes.map((item) =>
-      item.id === id ? { ...item, prioridad: !item.prioridad } : item
+  if (loading) {
+    return <Cargar />
+  }
+    return (
+      <>
+        <Navbar />
+        <div className="container">
+          <div className="row-fluid mt-4 justify-content-center d-flex">
+            <div
+              id="btn-crelote"
+              className="btn btn-success col-4"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-crear"
+            >
+              Crear nuevo lote
+            </div>
+          </div>
+        </div>
+        <Modal />
+        <br />
+        <div className="container">
+          <div className="row row-cols-1 row-cols-md-2 g-4">
+            {lotePintado.map((item) => {
+              return (
+                <div className="col" key={uuidv4()}>
+                  <div className="card mb-4">
+                    <div className="card-body bg-success text-light">
+                      <h5 className="card-title">{item.ID_LOTE}</h5>
+                    </div>
+                    <ul className="list-group list-group-flush">
+                      <li className="list-group-item d-flex justify-content-beetwen">
+                        <p>Cantidad de animales: </p>
+                        <p>{item.CANTIDAD_GANADO_LOTE}</p>
+                      </li>
+                      <li className="list-group-item d-flex justify-content-beetwen">
+                        <p>tipo del lote: </p>
+                        <p>{item.TIPO_LOTE}</p>
+                      </li>
+                      <li className="list-group-item d-flex justify-content-beetwen">
+                        <p>Fecha de creación: </p>
+                        <p>{item.FECHA_LOTE}</p>
+                      </li>
+                      {/* <li className="list-group-item">
+              <span className="badge bg-primary rounded-pill">
+                {prioridad ? "Prioritario" : "No prioritario"}
+              </span>
+            </li> */}
+                    </ul>
+                    <div className="card-body d-flex justify-content-end w-100">
+                      <button
+                        className="btn btn-danger me-3"
+                        onClick={() => {
+                          // eliminarLotes(id);
+                        }}
+                      >
+                        Eliminar lote
+                      </button>
+                      <button
+                        className="btn btn-warning"
+                        onClick={() => {
+                          // editarLotes(id);
+                        }}
+                      >
+                        Editar lote
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </>
     );
-
-    setLotes(editarLotes);
-  };
-
-  return (
-    <>
-      <Navbar />
-      <div className="container">
-        <div id="card-lote" className="card col-4 bg-success ms-auto mt-5">
-          <div className="card-body">
-            <div class="d-grid gap-2 col-9 mx-auto">
-              <button id="btn-lote" className="btn btn-light btn-lg" to="/">
-                Registrar ganado
-              </button>
-              <br />
-              <button id="btn-lote" className="btn btn-light btn-lg" to="/">
-                Editar ganado
-              </button>
-              <br />
-              <button id="btn-lote" className="btn btn-light btn-lg" to="/">
-                Eliminar ganado
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="row mt-4">
-          <buttom
-            id="btn-crelote"
-            className="btn btn-success col-3 ms-auto me-5"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-crear"
-          >
-            Crear nuevo lote
-          </buttom>
-        </div>
-      </div>
-      {/* Modal */}
-      <div
-        className="modal fade"
-        id="modal-crear"
-        data-bs-keyboard="true"
-        tabindex="-1"
-        aria-labelledby="modal-crearLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-lg modal-dialog-centered">
-          <div className="modal-content" id="modal-edit">
-            <div className="modal-header bg-success text-light" id="modal-header">
-              <h3 className="modal-title" id="modal-crearLabel">
-                Crear lote
-              </h3>
-              <button
-                type="button"
-                id="close-buttom"
-                className="btn-close btn-light"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">
-              <Start agregarLotes={agregarLotes}/>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br />
-      <div className="container">
-        <div className="row row-cols-1 row-cols-md-2 g-4">
-          {lotes.map((item) => (
-            <ComponentLotes
-              key={item.id}
-              lote={item}
-              eliminarLotes={eliminarLotes}
-              editarLotes={editarLotes}
-            />
-          ))}
-        </div>
-      </div>
-    </>
-  );
 };
 
 export default Mislotes;

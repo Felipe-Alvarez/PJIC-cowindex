@@ -1,13 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Exo:400,700");
 @import url("https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap");
 
-#welcome {
-  background-image: url("../images/broch_vacas.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  font-family: "Oxygen Mono", monospace;
-}
 #text-wel {
   border-radius: 0.5em;
   background-color: none;
@@ -29,10 +22,6 @@
 .info {
   z-index: 3;
   position: relative;
-}
-
-#footer {
-  background-color: green;
 }
 
 .context {

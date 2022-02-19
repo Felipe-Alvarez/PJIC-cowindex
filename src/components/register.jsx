@@ -11,7 +11,7 @@ const register = () => {
     >
       {/* PARA ORGANIZAR: JUSTIFY = EJE X, ALING = EJE Y */}
       <form
-        className="ms-5 col-lg-4 col-md-10 col-sm-10 col-10 h-auto p-2"
+        className="ms-5 col-lg-4 col-md-10 col-sm-10 col-12 h-auto p-2"
         id="form"
       >
         <div className="text-center">
@@ -55,17 +55,6 @@ const register = () => {
         </div>
         <div className="form-group mb-2 mt-4">
           <label for="name" id="form-label">
-            Segundo apellido
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="inputForm"
-            placeholder="Ingrese su segundo apellido."
-          />
-        </div>
-        <div className="form-group mb-2 mt-4">
-          <label for="name" id="form-label">
             Correo
           </label>
           <input
@@ -87,15 +76,15 @@ const register = () => {
           />
         </div>
         <div className="w-100 d-flex justify-content-center mt-4">
-          <Link
-            className="btn btn-success col-8 d-flex justify-content-between"
-            to="/crear-lote"
+          <buttom
+            className="btn btn-success col-lg-8 col-12 d-flex justify-content-between"
+            type="submit"
           >
             <div className="col-6">Crear cuenta</div>
             <div className="col-2">
             <BsFillPersonCheckFill></BsFillPersonCheckFill>
             </div>
-          </Link>
+          </buttom>
         </div>
         <div className="w-100 mt-2 d-flex justify-content-center">
           <div className="d-block text-center">

@@ -77,7 +77,7 @@ const Start = ({ agregarLotes }) => {
         </div>
         {/* form NRO VACAS */}
         <div className="form-group mb-2 mt-4">
-          <label htmlfor="name" id="form-label">
+          <label htmlFor="name" id="form-label">
             Cantidad de animales
           </label>
           <input
@@ -91,7 +91,7 @@ const Start = ({ agregarLotes }) => {
           />
         </div>
         <div className="form-group mb-2 mt-4">
-          <label htmlfor="name" id="form-label">
+          <label htmlFor="name" id="form-label">
             Tipo de lote
           </label>
           <input
@@ -105,7 +105,7 @@ const Start = ({ agregarLotes }) => {
           />
         </div>
         <div className="form-group mb-2 mt-4">
-          <label htmlfor="name" id="form-label">
+          <label htmlFor="name" id="form-label">
             Fecha de creación
           </label>
           <input
@@ -119,16 +119,16 @@ const Start = ({ agregarLotes }) => {
           />
         </div>
         <div className="form-group mt-4">
-          <div class="form-check form-switch">
+          <div className="form-check form-switch">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               id="check"
               name="prioridad"
               checked={prioridad}
               onChange={handleChange}
             />
-            <label class="form-check-label" htmlfor="flexSwitchCheckDefault">
+            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
               Priorizar lote
             </label>
           </div>

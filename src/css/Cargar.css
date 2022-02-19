@@ -1,3 +1,7 @@
+#col{
+    transition: all 1s;
+}
+
 #label_loading, #label_spin{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2em;

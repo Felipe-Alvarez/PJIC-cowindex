@@ -1,11 +1,15 @@
 import "../css/Navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaThLarge, FaSignOutAlt, FaUserAlt, FaStickerMule } from "react-icons/fa";
+import {
+  FaThLarge,
+  FaSignOutAlt,
+  FaUserAlt,
+  FaStickerMule,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
-
   const ModalExit = () => {
     Swal.fire({
       title: "Cerrar sesión",
@@ -19,7 +23,7 @@ const Navbar = () => {
     })
       .then((res) => {
         if (res.isConfirmed === true) {
-          window.location.href="/"
+          window.location.href = "/login";
         }
       })
       .catch((error) => {
@@ -51,15 +55,10 @@ const Navbar = () => {
           <FaUserAlt></FaUserAlt>
           <div className="">Usuario</div>
         </Link>
-        <buttom
-          id="btn"
-          className="btn btn-primary"
-          type="buttom"
-          onClick={ModalExit}
-        >
+        <div id="btn" className="btn btn-primary" onClick={ModalExit}>
           <FaSignOutAlt></FaSignOutAlt>
           <div className="">Salir</div>
-        </buttom>
+        </div>
       </div>
     </>
   );

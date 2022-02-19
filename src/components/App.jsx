@@ -3,6 +3,8 @@ import "../css/app.css";
 import { Link } from "react-router-dom";
 import { GrKey } from "react-icons/gr";
 import LogoCow from "../images/cowindex.png";
+// import { useHistory } from "react-router-dom";
+import Axios from 'axios';
 
 // import { useState } from "react";
 //import Cargar from "./Cargar";
@@ -11,6 +13,47 @@ import LogoCow from "../images/cowindex.png";
 
 
 const App = () => {
+
+  
+  // const url = 'https://api-cow.felipealvarez8.repl.co/api/usuario'
+
+  // const handleSubmit = (e) =>{
+  //     e.preventDefault();
+  // }
+
+  // const handleChange = async (e) => {
+      
+  // }
+  // const [user, setuser] = useState(null);
+  // async function login(email, pass){
+  //   const { data } = await Axios.post('https://api-cow.felipealvarez8.repl.co/api/usuario', {
+  //     email,
+  //     pass
+  //   })
+  // }
+
+  // const history = useHistory();
+
+  function login() {
+    const usuario = {
+      correo: document.getElementById("inputForm").value,
+      clave: document.getElementById("inputFormPass").value,
+    }; 
+    Axios
+      .post("https://API-COW.felipealvarez8.repl.co/api/usuario/auth", usuario)
+      .then(function ({ data, status }) {
+        // Se ejecuta siempre que el servidor ejecute todo correctamente
+        if (status === 200) {
+          // history.push("/");
+        } else {
+            
+        }
+      })
+      .catch(function (error) {
+        // Se ejecuta siempre que ocurra algún error
+        console.log(error);
+      });
+  }
 
   return (
     <div
@@ -45,13 +88,13 @@ const App = () => {
         </div>
         {/* form password */}
         <div className="form-group mb-2 mt-4">
-          <label for="name" id="form-label">
+          <label htmlFor="name" id="form-label">
             Contraseña
           </label>
           <input
             type="password"
             className="form-control"
-            id="inputForm"
+            id="inputFormPass"
             placeholder="Ingrese su contraseña"
           />
         </div>
@@ -60,6 +103,7 @@ const App = () => {
             className="btn btn-success d-flex col-12 justify-content-between"
             to="/lotes"
             id="link-login"
+            type="submit"
           >
             <div className="">Iniciar sesión</div>
             <div className="">
