@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Cargar from "./Cargar";
 
 const Perfil = () => {
-  const [user, setUser] = useState([]);
+  // const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(false);
   const pintarUser = async () => {
     try {
@@ -13,9 +13,9 @@ const Perfil = () => {
         "https://API-COW.felipealvarez8.repl.co/api/usuario"
       );
       // console.log(res);
-      const datos = await res.json();
-      setUser(datos);
-      console.log(datos);
+      // const datos = await res.json();
+      // setUser(datos);
+      // console.log(datos);
     } catch (error) {
       console.log(error);
     } finally {
@@ -43,62 +43,62 @@ const Perfil = () => {
           </h1>
           <hr />
           <br />
-              <form action="" className="form-group">
-                <div className="form-group mb-2 mt-4">
-                  <label id="form-label">Documento</label>
-                  <input
-                    className="form-control"
-                    id="inputForm"
-                    aria-describedby="docHelp"
-                    value="Document@user"
-                    disabled
-                  />
-                </div>
-                <div className="form-group mb-2 mt-4">
-                  <label id="form-label">Nombre</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="inputForm"
-                    aria-describedby="nameHelp"
-                    value="Name@user"
-                  />
-                </div>
-                {/* form password */}
-                <div className="form-group mb-2 mt-4">
-                  <label for="name" id="form-label">
-                    Primer apellido
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="inputForm"
-                    value="Lastname@user"
-                  />
-                </div>
-                <div className="form-group mb-2 mt-4">
-                  <label for="name" id="form-label">
-                    Correo
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="inputForm"
-                    value="Email@user"
-                  />
-                </div>
-                <div className="form-group mb-2 mt-4">
-                  <label for="name" id="form-label">
-                    Contraseña
-                  </label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    id="inputForm"
-                    value="Password@user"
-                  />
-                </div>
-              </form>
+          <form action="" className="form-group">
+            <div className="form-group mb-2 mt-4">
+              <label id="form-label">Documento</label>
+              <input
+                className="form-control"
+                id="inputForm"
+                aria-describedby="docHelp"
+                value="Document@user"
+                disabled
+              />
+            </div>
+            <div className="form-group mb-2 mt-4">
+              <label id="form-label">Nombre</label>
+              <input
+                type="text"
+                className="form-control"
+                id="inputForm"
+                aria-describedby="nameHelp"
+                value="Name@user"
+              />
+            </div>
+            {/* form password */}
+            <div className="form-group mb-2 mt-4">
+              <label for="name" id="form-label">
+                Primer apellido
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="inputForm"
+                value="Lastname@user"
+              />
+            </div>
+            <div className="form-group mb-2 mt-4">
+              <label for="name" id="form-label">
+                Correo
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="inputForm"
+                value="Email@user"
+              />
+            </div>
+            <div className="form-group mb-2 mt-4">
+              <label for="name" id="form-label">
+                Contraseña
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                id="inputForm"
+                value="Password@user"
+              />
+            </div>
+          </form>
           {/* ---name */}
           <div className="d-flex col-12 mt-4">
             <button
