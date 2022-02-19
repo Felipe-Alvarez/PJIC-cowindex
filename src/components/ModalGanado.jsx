@@ -70,17 +70,18 @@ const ModalGanado = () => {
               ID_LOTE: values.ID_LOTE,
             }
           )
-            .then(function (res) {
+            .then((res) => {
               console.log(res);
               Swal.fire({
                 title: "Ganado agregado",
                 text: "Se ha registrado correctamente",
                 icon: "success",
                 confirmButtonText: "Aceptar",
+              }).then((res) => {
+                if (res.isConfirmed === true) {
+                  window.location.href = "/ganado";
+                }
               });
-              if(res.isConfirmed){
-                window.location.href='/ganado'
-              }
             })
             .catch(function (error) {
               console.log(error);

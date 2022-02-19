@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { Formik, Form, Field } from "formik";
 import "../css/Start.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -61,52 +60,35 @@ const Start = () => {
 
   //   reset(initialState);
   //   // console.log(lote);
-  // };
-
-  const [idsel, setIdsel] = useState([]);
-  const pintarIDLote = async () => {
-    try {
-      const res = await fetch(
-        "https://API-COW.felipealvarez8.repl.co/api/lotes"
-      );
-      // console.log(res);
-      const datos = await res.json();
-      setIdsel(datos);
-      console.log(datos);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    pintarIDLote();
-  }, []);
+  // }
 
   return (
     <Formik
       initialValues={{
-        ID_GANADO: uuidv4(),
-        NOMBRE_GANADO: "",
-        RAZA_GANADO: "",
-        TIPO_GANADO: "",
         ID_LOTE: "",
+        CANTIDAD_GANADO_LOTE: "",
+        FECHA_LOTE: "",
+        TIPO_LOTE: "",
       }}
       onSubmit={(values) => {
         console.log(values);
-        Axios.post("https://api-cow.felipealvarez8.repl.co/api/ganado", {
-          ID_GANADO: values.ID_GANADO,
-          NOMBRE_GANADO: values.NOMBRE_GANADO,
-          RAZA_GANADO: values.RAZA_GANADO,
-          TIPO_GANADO: values.TIPO_GANADO,
-          ID_LOTE: values.ID_LOTE,
+        Axios.post("https://api-cow.felipealvarez8.repl.co/api/lotes/agregar", {
+          ID_LOTE: uuidv4(),
+          CANTIDAD_GANADO_LOTE: values.CANTIDAD_GANADO_LOTE,
+          FECHA_LOTE: values.FECHA_LOTE,
+          TIPO_LOTE: values.TIPO_LOTE,
         })
           .then(function (res) {
             console.log(res);
             Swal.fire({
-              title: "Usuario creado",
+              title: "Lote creado",
               text: "Se ha registrado correctamente",
               icon: "success",
               confirmButtonText: "Aceptar",
+            }).then((res) => {
+              if (res.isConfirmed === true) {
+                window.location.href = "/lotes";
+              }
             });
           })
           .catch(function (error) {
@@ -121,60 +103,42 @@ const Start = () => {
       }}
     >
       <Form className="p-2 mb-5" id="form">
-        {/* form LOTE */}
-        <div className="form-group mb-2 mt-4">
-          <label id="form-label">Nombre de animal</label>
-          <Field
-            type="text"
-            className="form-control"
-            id="inputForm"
-            placeholder="Ingrese el nombre del animal"
-            name="NOMBRE_GANADO"
-          />
-        </div>
         {/* form NRO VACAS */}
         <div className="form-group mb-2 mt-4">
           <label htmlFor="name" id="form-label">
-            Raza ganado
+            Cantidad de animales
+          </label>
+          <Field
+            type="number"
+            className="form-control"
+            id="inputForm"
+            placeholder="Ingrese el número de animales"
+            name="CANTIDAD_GANADO_LOTE"
+          />
+        </div>
+        <div className="form-group mb-2 mt-4">
+          <label htmlFor="name" id="form-label">
+            Tipo de lote
           </label>
           <Field
             type="text"
             className="form-control"
             id="inputForm"
-            placeholder="Ingrese el tipo de raza"
-            name="RAZA_GANADO"
+            placeholder="Ingrese el tipo de lote (Carne, crianza, etc)"
+            name="TIPO_LOTE"
           />
         </div>
         <div className="form-group mb-2 mt-4">
           <label htmlFor="name" id="form-label">
-            Destino del animal
+            Fecha de creación
           </label>
           <Field
-            type="text"
+            type="date"
             className="form-control"
             id="inputForm"
-            placeholder="Añada para qué está destinado el animal"
-            name="TIPO_GANADO"
+            placeholder="Fecha de creación"
+            name="FECHA_LOTE"
           />
-        </div>
-        <div className="form-group mb-2 mt-4">
-          <label htmlFor="name" id="form-label">
-            Agregar a lote
-          </label>
-          <Field
-            as="select"
-            id="inputForm"
-            className="form-control"
-            name="ID_LOTE"
-          >
-            {idsel.map((item) => {
-              return (
-                <option key={uuidv4()} className="form-control">
-                  {item.ID_LOTE}
-                </option>
-              );
-            })}
-          </Field>
         </div>
         <div className="w-100 d-flex justify-content-center mt-4">
           <Button type="submit" className="btn btn-success col-10">

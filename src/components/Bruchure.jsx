@@ -10,7 +10,7 @@ const Bruchure = () => {
           <h1 className="text-success">Bienvenido a cowindex</h1>
           <hr />
           <div className="row w-auto">
-            <Link to="/login" className="col-3 btn info m-auto" id="buttom-wel">
+            <Link to="/login" className="col-lg-3 col-12 btn info m-auto" id="buttom-wel">
               Prueba el aplicativo
             </Link>
           </div>
